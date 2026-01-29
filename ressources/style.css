@@ -1,0 +1,553 @@
+/* --- IMPORTATION DES POLICES --- */
+/* Playfair Display pour les titres (élégance) et Montserrat pour le texte (lisibilité) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* --- VARIABLES --- */
+:root {
+    --color-gold: #C5A059;       /* Couleur Or Prestige */
+    --color-dark: #1A1A1A;       /* Gris Anthracite très sombre */
+    --color-grey: #4A4A4A;       /* Gris texte */
+    --color-light: #F9F9F9;      /* Fond très clair */
+    --color-white: #FFFFFF;
+    
+    --font-title: 'Playfair Display', serif;
+    --font-text: 'Montserrat', sans-serif;
+}
+
+/* --- RESET & GLOBAL --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-text);
+    background-color: var(--color-light);
+    color: var(--color-grey);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-title);
+    color: var(--color-dark);
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+
+ul {
+    list-style: none;
+}
+
+/* --- HEADER --- */
+header {
+    background-color: var(--color-white);
+    padding: 1.5rem 2rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2rem;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--color-gold);
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+nav a {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    color: var(--color-dark);
+}
+
+nav a:hover {
+    color: var(--color-gold);
+}
+
+/* --- MAIN LAYOUT --- */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+section {
+    margin-bottom: 4rem;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #e0e0e0;
+    margin: 3rem auto;
+    width: 60%;
+}
+
+/* --- HERO SECTION --- */
+#accueil {
+    text-align: center;
+    padding: 4rem 1rem;
+    background-color: var(--color-white);
+    border: 1px solid #eee;
+}
+
+#accueil h2 {
+    font-size: 2.5rem;
+    font-style: italic;
+    color: var(--color-dark);
+}
+
+#accueil p {
+    font-size: 1.2rem;
+    color: var(--color-grey);
+    margin-top: 1rem;
+}
+
+/* --- SERVICES SECTION --- */
+#services h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+#services > p {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-style: italic;
+}
+
+/* Grille pour les 3 services */
+#services {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Conteneur flex pour les articles si l'écran est large */
+@media (min-width: 768px) {
+    #services {
+        display: block; /* Reset pour garder le titre en haut */
+    }
+    .services-container {
+        display: flex;
+        gap: 2rem;
+        justify-content: space-between;
+    }
+}
+
+/* Tu devras ajouter une div class="services-container" autour de tes <article> dans le HTML pour que le flex fonctionne parfaitement, ou utiliser ce sélecteur direct : */
+#services article {
+    background: var(--color-white);
+    padding: 2rem;
+    border-top: 4px solid var(--color-gold); /* La touche prestige */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    margin-bottom: 2rem;
+    flex: 1; /* Largeur égale */
+}
+
+#services article h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+#services article ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#services article ul li::before {
+    content: "•";
+    color: var(--color-gold);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* --- SKYNIUM E-RESERVATION --- */
+#skynium-reservation {
+    background-color: #2c3e50; /* Un bleu foncé tech/pro pour contraster */
+    color: var(--color-white);
+    padding: 3rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+#skynium-reservation h3 {
+    color: var(--color-gold);
+    font-size: 1.8rem;
+}
+
+#skynium-reservation p {
+    color: #e0e0e0;
+    margin-bottom: 1rem;
+}
+
+#skynium-reservation ul {
+    text-align: left;
+    display: inline-block;
+    margin: 1.5rem 0;
+}
+
+#skynium-reservation ul li {
+    margin-bottom: 0.5rem;
+    list-style-type: check; /* Fallback */
+}
+
+/* --- FORMULAIRE --- */
+#contact {
+    background: var(--color-white);
+    padding: 3rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    max-width: 800px;
+    margin: 0 auto 4rem auto;
+    border-radius: 4px;
+}
+
+#contact h2 {
+    text-align: center;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: var(--color-gold);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    #hero h2 {
+        font-size: 1.8rem;
+    }
+    
+    #services article {
+        margin-bottom: 2rem;
+    }
+}
+
+/* --- AJOUTS POUR LA PAGE PRESTATIONS --- */
+
+/* Titre spécifique de page */
+.page-header {
+    text-align: center;
+    padding: 3rem 1rem;
+    background-color: var(--color-light);
+    border-bottom: 1px solid #ddd;
+}
+
+/* Style des sections détaillées */
+.service-detail {
+    padding: 2rem 0;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.service-detail h3 {
+    font-size: 2rem;
+    color: var(--color-gold);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+/* Liste à puces "Luxe" */
+.prestige-list {
+    margin-top: 1.5rem;
+    border-left: 3px solid var(--color-gold);
+    padding-left: 2rem;
+}
+
+.prestige-list li {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.prestige-list strong {
+    color: var(--color-dark);
+}
+
+/* Séparateur doré fin */
+.separator-gold {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--color-gold), transparent);
+    margin: 3rem auto;
+    width: 50%;
+}
+
+/* Grille pour les animations */
+.animation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.anim-item {
+    background: var(--color-white);
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border-radius: 4px;
+    border-bottom: 3px solid var(--color-gold);
+}
+
+.anim-item h4 {
+    font-family: var(--font-title);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Bannière d'appel à l'action (bas de page) */
+.cta-banner {
+    text-align: center;
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    padding: 4rem 2rem;
+    margin-top: 4rem;
+    border-radius: 8px;
+}
+
+.cta-banner h3 {
+    color: var(--color-gold);
+    font-size: 2rem;
+}
+
+.cta-banner p {
+    margin-bottom: 2rem;
+    color: #ccc;
+}
+
+/* Bouton doré */
+.btn-gold {
+    display: inline-block;
+    background-color: var(--color-gold);
+    color: var(--color-white);
+    padding: 15px 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 4px;
+    margin-top: 1rem;
+}
+
+.btn-gold:hover {
+    background-color: #b08d45;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(197, 160, 89, 0.3);
+}
+
+/* Petit détail pour le menu actif */
+nav a.active {
+    color: var(--color-gold);
+    border-bottom: 2px solid var(--color-gold);
+}
+
+/* --- AJOUTS POUR LA PAGE CONTACT --- */
+
+.contact-cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.contact-card {
+    background: var(--color-white);
+    padding: 2.5rem;
+    border-top: 5px solid var(--color-gold);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    border-radius: 4px;
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    text-align: center;
+}
+
+.contact-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.contact-card p {
+    margin-bottom: 1.5rem;
+    color: var(--color-grey);
+}
+
+/* Style spécifique pour la carte Skynium (sombre pour rappeler la tech) */
+.contact-card.dark-card {
+    background-color: #2c3e50;
+    border-top: 5px solid #3498db; /* Bleu tech ou garde Gold si tu préfères */
+}
+
+.contact-card.dark-card h3, 
+.contact-card.dark-card p {
+    color: var(--color-white);
+}
+
+/* Liens emails */
+.email-link {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--color-gold);
+    border-bottom: 1px dotted var(--color-gold);
+}
+
+.contact-card.dark-card .email-link {
+    color: #3498db; /* Ou Gold si tu veux rester uniforme */
+    border-color: #3498db;
+}
+
+.email-link:hover {
+    border-bottom: 1px solid;
+}
+
+/* Wrapper pour le formulaire sur la page contact */
+.form-wrapper {
+    background: var(--color-white);
+    padding: 2rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    border-radius: 4px;
+    max-width: 900px;
+    margin: 0 auto 4rem auto;
+}
+
+/* --- AJOUTS POUR LA PAGE E-RESERVATION --- */
+
+/* Hero spécifique avec un léger fond dégradé pour faire "Tech" mais doux */
+.tech-hero {
+    background: linear-gradient(135deg, #fdfbf7 0%, #eef2f3 100%);
+    padding: 4rem 2rem;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.tech-hero h2 {
+    font-size: 2.5rem;
+    color: #2c3e50; /* Bleu foncé pour le côté tech */
+}
+
+/* Les étapes (1, 2, 3) */
+.steps-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+}
+
+.step-card {
+    flex: 1;
+    text-align: center;
+    padding: 2rem;
+    background: var(--color-white);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    position: relative;
+    min-width: 250px;
+}
+
+.step-number {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background-color: var(--color-gold);
+    color: var(--color-white);
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+/* Grille des avantages */
+.features-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.features-section h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.feature-list-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.feature-list-grid li {
+    background: var(--color-white);
+    padding: 1.5rem;
+    border-left: 4px solid #2c3e50; /* Rappel Skynium */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.feature-list-grid strong {
+    display: block;
+    font-size: 1.2rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+/* Bannière Skynium sombre */
+.partner-banner {
+    background-color: #1a252f; /* Très sombre */
+    color: #bdc3c7;
+    text-align: center;
+    padding: 3rem;
+    margin-top: 4rem;
+}
+
+.btn-outline {
+    display: inline-block;
+    border: 1px solid var(--color-white);
+    color: var(--color-white);
+    padding: 10px 20px;
+    margin-top: 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.btn-outline:hover {
+    background-color: var(--color-white);
+    color: #1a252f;
+}
