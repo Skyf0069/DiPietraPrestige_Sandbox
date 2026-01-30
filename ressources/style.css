@@ -394,3 +394,64 @@ footer a { color: var(--color-gold); font-weight: bold; }
     #accueil h2 { font-size: 2rem; }
     #services article { margin-bottom: 1rem; }
 }
+
+/* =========================================
+   STYLE SPÉCIFIQUE E-RESERVATION (RESTAURÉ)
+   ========================================= */
+.tech-hero {
+    background: linear-gradient(135deg, #fdfbf7 0%, #fff 100%);
+    padding: 3rem 2rem;
+    text-align: center;
+    border-bottom: 1px solid var(--color-gold-light);
+    margin-bottom: 3rem;
+    border-radius: 8px;
+}
+.tech-hero h2 { font-size: 2.5rem; color: #2c3e50; margin-bottom: 1rem; }
+
+/* Les étapes 1, 2, 3 */
+.steps-container {
+    display: flex; justify-content: space-between; gap: 2rem; margin-top: 3rem; flex-wrap: wrap;
+}
+.step-card {
+    flex: 1; text-align: center; padding: 2rem;
+    background: var(--color-white); border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); position: relative; min-width: 250px;
+    border-bottom: 3px solid var(--color-gold);
+}
+.step-number {
+    display: inline-block; width: 50px; height: 50px; line-height: 50px;
+    background-color: var(--color-gold); color: var(--color-white);
+    border-radius: 50%; font-weight: bold; font-size: 1.5rem; margin-bottom: 1rem;
+    box-shadow: 0 4px 10px rgba(197, 160, 89, 0.4);
+}
+.step-card h4 { margin-bottom: 1rem; font-size: 1.2rem; }
+
+/* Liste avantages */
+.feature-list-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.feature-list-grid li {
+    background: var(--color-white); padding: 1.5rem;
+    border-left: 4px solid #2c3e50; box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.feature-list-grid strong { display: block; font-size: 1.2rem; color: #2c3e50; margin-bottom: 0.5rem; }
+
+/* Bannière Skynium */
+.partner-banner {
+    background-color: #1a252f; color: #bdc3c7; text-align: center;
+    padding: 4rem 2rem; margin-top: 4rem; border-radius: 8px;
+}
+.btn-outline {
+    display: inline-block; border: 1px solid var(--color-white); color: var(--color-white);
+    padding: 10px 25px; margin-top: 1.5rem; border-radius: 50px; transition: 0.3s;
+}
+.btn-outline:hover { background-color: var(--color-white); color: #1a252f; }
+
+/* CTA Devid */
+.cta-banner {
+    background-color: var(--color-dark); color: #fff; padding: 4rem 2rem;
+    border-radius: 8px; text-align: center; margin-top: 3rem;
+}
+.btn-gold {
+    background-color: var(--color-gold); color: white; padding: 15px 40px;
+    text-transform: uppercase; font-weight: bold; border-radius: 50px;
+    display: inline-block; margin-top: 1.5rem; box-shadow: 0 5px 15px rgba(197, 160, 89, 0.3);
+}
