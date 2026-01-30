@@ -455,3 +455,53 @@ footer a { color: var(--color-gold); font-weight: bold; }
     text-transform: uppercase; font-weight: bold; border-radius: 50px;
     display: inline-block; margin-top: 1.5rem; box-shadow: 0 5px 15px rgba(197, 160, 89, 0.3);
 }
+
+/* --- DÉCORATION FLEURS ÉMOJIS --- */
+
+.flower-emoji {
+    position: fixed; /* Reste fixe au scroll */
+    z-index: 0; /* Derrière le texte */
+    pointer-events: none; /* On peut cliquer au travers */
+    opacity: 0.8; /* Légèrement transparent pour ne pas gêner la lecture */
+    animation: floatEmoji 6s ease-in-out infinite;
+    cursor: default;
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1)); /* Petite ombre portée pour le relief */
+}
+
+/* 1. Rose en haut à gauche */
+.top-left {
+    top: -10px;
+    left: -10px;
+    font-size: 6rem; /* Très gros */
+    transform: rotate(-20deg);
+}
+
+/* 2. Tournesol en bas à droite */
+.bottom-right {
+    bottom: -10px;
+    right: -10px;
+    font-size: 5rem;
+    animation-delay: 1s; /* Bouge en décalé */
+}
+
+/* 3. Bouquet au milieu (caché sur mobile pour pas gêner) */
+.mid-right {
+    top: 30%;
+    right: 2%;
+    font-size: 4rem;
+    opacity: 0.6;
+    animation-delay: 2s;
+}
+
+/* L'animation qui fait "voler" doucement */
+@keyframes floatEmoji {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+/* Sur mobile, on réduit un peu la taille et on cache celle du milieu */
+@media (max-width: 768px) {
+    .top-left { font-size: 4rem; opacity: 0.5; }
+    .bottom-right { font-size: 3rem; opacity: 0.5; }
+    .mid-right { display: none; }
+}
