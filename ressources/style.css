@@ -470,9 +470,9 @@ footer a { color: var(--color-gold); font-weight: bold; }
 
 /* 1. Rose en haut à gauche */
 .top-left {
-    top: -10px;
-    left: -10px;
-    font-size: 6rem; /* Très gros */
+    top: 110px;  /* On descend à 110px pour passer SOUS la barre de menu */
+    left: 10px;  /* On la décale un peu vers l'intérieur */
+    font-size: 6rem;
     transform: rotate(-20deg);
 }
 
@@ -501,7 +501,18 @@ footer a { color: var(--color-gold); font-weight: bold; }
 
 /* Sur mobile, on réduit un peu la taille et on cache celle du milieu */
 @media (max-width: 768px) {
-    .top-left { font-size: 4rem; opacity: 0.5; }
-    .bottom-right { font-size: 3rem; opacity: 0.5; }
+    .top-left { 
+        top: 90px; /* Descendu pour être visible sous le menu mobile */
+        left: -5px; 
+        font-size: 4rem; 
+        opacity: 0.6; 
+    }
+    
+    .bottom-right { 
+        font-size: 3rem; 
+        opacity: 0.5; 
+        bottom: 10px; /* Un peu remonté pour pas gêner */
+    }
+    
     .mid-right { display: none; }
 }
